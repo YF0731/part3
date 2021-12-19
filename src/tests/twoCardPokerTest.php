@@ -2,9 +2,9 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/../lib/twoCardPoker.php';
+require_once __DIR__ . '/../lib/TwoCardPoker.php';
 
-class twoCardPokerTest extends TestCase
+class TwoCardPokerTest extends TestCase
 {
   public function testShowDown()
   {
