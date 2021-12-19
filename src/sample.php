@@ -1,8 +1,13 @@
 <?php
 
-function sayHello(string $arg_string): void
-{
-    echo "Hello" . $arg_string . PHP_EOL;
+$items = [
+  ['name' => 'onion', 'price' => 100],
+];
+$total = 0;
+
+foreach ($items as $item) {
+  $price = $item['price'];
+  $total += $price;
 }
 
-sayHello($arg_string);
+var_dump($total);
