@@ -30,25 +30,25 @@ $answer = 7612;
 
 function judge(int $correctAnswer, int $answer): array
 {
-  $hitAndBlow = [
-    'hit' => 0,
-    'blow' => 0
-  ];
+    $hitAndBlow = [
+        'hit' => 0,
+        'blow' => 0
+    ];
 
-  $correctAnswerArray = str_split($correctAnswer);
-  $answerArray = str_split($answer);
+    $correctAnswerArray = str_split($correctAnswer);
+    $answerArray = str_split($answer);
 
-  $hits = [];
-  foreach ($correctAnswerArray as $key => $correctNumber) {
-    if ($correctNumber === $answerArray[$key]) {
-      $hitAndBlow['hit']++;
-      array_push($hits, $correctNumber);
+    $hits = [];
+    foreach ($correctAnswerArray as $key => $correctNumber) {
+        if ($correctNumber === $answerArray[$key]) {
+            $hitAndBlow['hit']++;
+            array_push($hits, $correctNumber);
+        }
     }
-  }
-  $blows = array_diff($answerArray, $hits);
-  $hitAndBlow['blow'] = count(array_intersect($blows, $correctAnswerArray));
+    $blows = array_diff($answerArray, $hits);
+    $hitAndBlow['blow'] = count(array_intersect($blows, $correctAnswerArray));
 
-  return array_values($hitAndBlow);
+    return array_values($hitAndBlow);
 }
 
 judge($correctAnswer, $answer);
