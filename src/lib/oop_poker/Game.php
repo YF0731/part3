@@ -7,6 +7,7 @@ class Game
     public function __construct(private string $name)
     {
     }
+
     public function start()
     {
         // プレイヤーを登録する
