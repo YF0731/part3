@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Deck.php';
+
 class Player
 {
     public function __construct(
@@ -7,24 +9,8 @@ class Player
     ) {
     }
 
-    public function drawCards(): array
+    public function drawCards(Deck $deck, int $drawNum): array
     {
-        $cards = $this->prepareCards();
-        $cards = $this->shuffleCards($cards);
-        return $this->selectCards($cards);
-    }
-
-    private function prepareCards()
-    {
-    }
-
-    private function shuffleCards($cards)
-    {
-    }
-
-    private function selectCards($cards)
-    {
-        // TODO: 仮実装
-        return ['H10', 'D10'];
+        return $deck->drawCards($drawNum);
     }
 }

@@ -2,8 +2,26 @@
 
 class VendingMachine
 {
-    public function pressButton()
+    private const PRICE_OF_DRINK = 100;
+
+    private int $depositedCoin = 0;
+
+    public function depositCoin(int $coinAmount): int
     {
-        return 'cider';
+        if ($coinAmount === 100) {
+            $this->depositedCoin += $coinAmount;
+        };
+
+        return $this->depositedCoin;
+    }
+
+    public function pressButton(): string
+    {
+        if ($this->depositedCoin >= $this::PRICE_OF_DRINK) {
+            $this->depositedCoin -= $this::PRICE_OF_DRINK;
+            return 'cider';
+        } else {
+            return '';
+        }
     }
 }

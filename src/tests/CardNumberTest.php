@@ -2,9 +2,9 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once(__DIR__ . '/../lib/card.php');
+require_once(__DIR__ . '/../lib/CardNumber.php');
 
-class CardTest extends TestCase
+class CardNumberTest extends TestCase
 {
   public function testShowDown()
   {
