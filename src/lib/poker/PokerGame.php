@@ -1,5 +1,8 @@
 <?php
 
+require_once  __DIR__ . '/PokerPlayer.php';
+require_once  __DIR__ . '/PokerCard.php';
+
 class PokerGame
 {
     public function __construct(
@@ -10,6 +13,12 @@ class PokerGame
 
     public function start(): array
     {
-        return [$this->cards1, $this->cards2];
+        $playerCardRanks = [];
+        foreach ([$this->cards1, $this->cards2] as $cards) {
+            $pokerCards = array_map(fn ($card) => new PokerCard($card), $cards);
+            $player = new PokerPlayer($pokerCards);
+            $playerCardRanks[] = $player->getCardRanks();
+        }
+        return $playerCardRanks;
     }
 }
