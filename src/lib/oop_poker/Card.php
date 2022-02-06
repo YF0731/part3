@@ -18,5 +18,3 @@ class Card
         return $this->number;
     }
 }
-
-//

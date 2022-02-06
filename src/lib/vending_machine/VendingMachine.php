@@ -1,9 +1,9 @@
 <?php
 
+require_once  __DIR__ . '/Item.php';
+
 class VendingMachine
 {
-    private const PRICE_OF_DRINK = 100;
-
     private int $depositedCoin = 0;
 
     public function depositCoin(int $coinAmount): int
@@ -15,11 +15,12 @@ class VendingMachine
         return $this->depositedCoin;
     }
 
-    public function pressButton(): string
+    public function pressButton(Item $item): string
     {
-        if ($this->depositedCoin >= $this::PRICE_OF_DRINK) {
-            $this->depositedCoin -= $this::PRICE_OF_DRINK;
-            return 'cider';
+        $price = $item->getPrice();
+        if ($this->depositedCoin >= $price) {
+            $this->depositedCoin -= $price;
+            return $item->getName();
         } else {
             return '';
         }
