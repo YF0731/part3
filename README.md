@@ -1,10 +1,10 @@
-# Part 3： PHPとオブジェクト指向
+# Part 3： PHP とオブジェクト指向
 
 ## 目的
 
-* 開発現場で必要とされるPHPの知識を習得する
-* オブジェクト指向を理解しプログラムを書ける
-* 自信を持ってコードを読み書きできる
+- 開発現場で必要とされる PHP の知識を習得する
+- オブジェクト指向を理解しプログラムを書ける
+- 自信を持ってコードを読み書きできる
 
 ## 環境構築
 
@@ -22,7 +22,7 @@ docker-compose exec app php -v
 docker-compose down
 ```
 
-## 環境構築 (Remote Development編)
+## 環境構築 (Remote Development 編)
 
 Docker イメージをビルドする。
 
@@ -50,4 +50,3 @@ docker-compose down
 4. コードを実行する
 
 ブレークポイントで止まらない場合、 `.vscode/launch.json` の port が 9003 であることを確認する。
-# part3
