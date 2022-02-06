@@ -2,7 +2,7 @@
 
 class VendingMachine
 {
-    public function pressButton(): string
+    public function pressButton()
     {
         return 'cider';
     }

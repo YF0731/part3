@@ -6,7 +6,7 @@ require_once __DIR__ . '/../../lib/vending_machine/VendingMachine.php';
 
 class VendingMachineTest extends TestCase
 {
-    function testPressButton()
+    public function testPressButton()
     {
         $vendingMachine = new VendingMachine();
         $this->assertSame('cider', $vendingMachine->pressButton());

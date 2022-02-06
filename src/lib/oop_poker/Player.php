@@ -2,11 +2,12 @@
 
 class Player
 {
-    public function __construct(private string $name)
-    {
+    public function __construct(
+        private string $name
+    ) {
     }
 
-    public function drawCards()
+    public function drawCards(): array
     {
         $cards = $this->prepareCards();
         $cards = $this->shuffleCards($cards);
@@ -23,7 +24,7 @@ class Player
 
     private function selectCards($cards)
     {
-        // TODO 仮実装
+        // TODO: 仮実装
         return ['H10', 'D10'];
     }
 }
