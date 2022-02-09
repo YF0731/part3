@@ -6,9 +6,9 @@ require_once __DIR__ . '/../../lib/poker/PokerCard.php';
 
 class PokerCardTest extends TestCase
 {
-    public function testGetRank()
+    public function testGetPair()
     {
-        $card = new PokerCard('C10');
-        $this->assertSame(9, $card->getRank());
+        $card = new PokerCard(['A', 'A']);
+        $this->assertSame('pair', $card->getPair());
     }
 }
