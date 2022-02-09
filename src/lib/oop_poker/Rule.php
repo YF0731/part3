@@ -1,9 +1,6 @@
 <?php
 
-class Rule
+interface Rule
 {
-    public function getHand(array $cards): string
-    {
-        return 'pair';
-    }
+    public function getHand(array $cards);
 }
