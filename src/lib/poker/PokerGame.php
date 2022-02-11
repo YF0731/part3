@@ -2,6 +2,8 @@
 
 require_once  __DIR__ . '/PokerCard.php';
 require_once  __DIR__ . '/PokerHandEvaluator.php';
+require_once  __DIR__ . '/PokerTwoCardRule.php';
+require_once  __DIR__ . '/PokerThreeCardRule.php';
 
 class PokerGame
 {
@@ -16,9 +18,19 @@ class PokerGame
         $hands = [];
         foreach ([$this->cards1, $this->cards2] as $cards) {
             $pokerCards = array_map(fn ($card) => new PokerCard($card), $cards);
-            $handEvaluator = new PokerHandEvaluator();
+            $rule = $this->getRule($cards);
+            $handEvaluator = new PokerHandEvaluator($rule);
             $hands[] = $handEvaluator->getHand($pokerCards);
         }
         return $hands;
+    }
+
+    private function getRule(array $cards): PokerRule
+    {
+        $rule = new PokerTwoCardRule();
+        if (count($cards) === 3) {
+            $rule = new PokerThreeCardRule();
+        }
+        return $rule;
     }
 }
