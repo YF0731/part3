@@ -3,7 +3,7 @@
 class HandEvaluator
 {
     public function __construct(
-        private $rule,
+        private Rule $rule,
     ) {
     }
 

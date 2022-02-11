@@ -8,10 +8,12 @@ class PokerHandEvaluatorTest extends TestCase
 {
     public function testGetHand()
     {
-        $handEvaluator = new PokerHandEvaluator();
-        $this->assertSame('high card', $card->getHand([new PokerCard('H5'), new PokerCard('C7')]));
-        $this->assertSame('pair', $card->getHand([new PokerCard('H10'), new PokerCard('C10')]));
-        $this->assertSame('straight', $card->getHand([new PokerCard('DA'), new PokerCard('S2')]));
-        $this->assertSame('straight', $card->getHand([new PokerCard('DA'), new PokerCard('SK')]));
+        // カードが2枚の場合
+        $handEvaluator = new PokerHandEvaluator(new PokerTwoCardRule());
+        $this->assertSame('straight', $$handEvaluator->getHand([new PokerCard('DA'), new PokerCard('SK')]));
+
+        // カードが3枚の場合
+        $handEvaluator = new PokerHandEvaluator(new PokerThreeCardRule());
+        $this->assertSame('straight', $$handEvaluator->getHand([new PokerCard('DA'), new PokerCard('S2'), new PokerCard('C3')]));
     }
 }

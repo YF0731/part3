@@ -15,7 +15,7 @@ class PokerCard
         'J' => 10,
         'Q' => 11,
         'K' => 12,
-        'A' => 1
+        'A' => 13
     ];
 
     public function __construct(
