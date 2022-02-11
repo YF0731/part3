@@ -1,7 +1,5 @@
 <?php
 
-use MyClass as GlobalMyClass;
-
 class Person
 {
     public function __construct(
