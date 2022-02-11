@@ -21,6 +21,7 @@ class VendingMachineTest extends TestCase
         $cider = new Drink('cider');
         $cola = new Drink('cola');
         $hotCupCoffee = new CupDrink('hot cup coffee');
+        $snack = new snack();
         $vendingMachine = new VendingMachine();
 
         # お金が投入されてない場合は購入できない
@@ -44,6 +45,10 @@ class VendingMachineTest extends TestCase
         // カップを入れた場合は購入できる
         $vendingMachine->addCup(1);
         $this->assertSame('hot cup coffee', $vendingMachine->pressButton($hotCupCoffee));
+
+        // スナックも購入できる
+        $vendingMachine->depositCoin(100);
+        $this->assertSame('poteto chips', $vendingMachine->pressButton($snack));
     }
 
     public function testAddCup()
