@@ -14,4 +14,9 @@ class HandEvaluatorTest extends TestCase
         $cards = [new Card('H', 10), new Card('C', 10)];
         $this->assertSame('pair', $handEvaluator->getHand($cards));
     }
+
+    public function testGetWinner()
+    {
+        $this->assertSame(1, HandEvaluator::getWinner('pair', 'high card'));
+    }
 }

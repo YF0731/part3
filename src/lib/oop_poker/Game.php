@@ -10,21 +10,27 @@ require_once 'RuleC.php';
 class Game
 {
     public function __construct(
-        private string $name,
+        private string $name1,
+        private string $name2,
         private int $drawNum,
         private string $ruleType
     ) {
     }
 
-    function start(): string
+    function start(): int
     {
         $deck = new Deck();
-        $player = new Player($this->name);
-        $cards = $player->drawCards($deck, $this->drawNum);
         $rule = $this->getRule();
         $handEvaluator = new HandEvaluator($rule);
-        $hand = $handEvaluator->getHand($cards);
-        return $hand;
+        $hands = [];
+
+        foreach ([$this->name1, $this->name2] as $name) {
+            $player = new Player($name);
+            $cards = $player->drawCards($deck, $this->drawNum);
+            $hands[] = $handEvaluator->getHand($cards);
+        }
+
+        return HandEvaluator::getWinner($hands[0], $hands[1]);
     }
 
     private function getRule()

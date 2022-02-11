@@ -4,6 +4,7 @@ require_once  __DIR__ . '/PokerCard.php';
 require_once  __DIR__ . '/PokerHandEvaluator.php';
 require_once  __DIR__ . '/PokerTwoCardRule.php';
 require_once  __DIR__ . '/PokerThreeCardRule.php';
+require_once  __DIR__ . '/PokerFiveCardRule.php';
 
 class PokerGame
 {
@@ -30,6 +31,9 @@ class PokerGame
         $rule = new PokerTwoCardRule();
         if (count($cards) === 3) {
             $rule = new PokerThreeCardRule();
+        }
+        if (count($cards) === 5) {
+            $rule = new PokerFiveCardRule();
         }
         return $rule;
     }
