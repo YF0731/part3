@@ -1,6 +1,7 @@
 <?php
 
 require_once  __DIR__ . '/PokerCard.php';
+require_once  __DIR__ . '/PokerHandEvaluator.php';
 
 class PokerGame
 {
@@ -12,11 +13,12 @@ class PokerGame
 
     public function start(): array
     {
-        $playerCardPair = [];
+        $hands = [];
         foreach ([$this->cards1, $this->cards2] as $cards) {
-            $pokerCards = new PokerCard(array_map(fn ($card) => substr($card, 1), $cards));
-            $playerCardPair[] = $pokerCards->getPair();
+            $pokerCards = array_map(fn ($card) => new PokerCard($card), $cards);
+            $handEvaluator = new PokerHandEvaluator();
+            $hands[] = $handEvaluator->getHand($pokerCards);
         }
-        return $playerCardPair;
+        return $hands;
     }
 }
