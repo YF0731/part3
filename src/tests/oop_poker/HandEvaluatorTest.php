@@ -1,5 +1,10 @@
 <?php
 
+namespace OopPoker\Tests;
+
+use OopPoker\Card;
+use OopPoker\HandEvaluator;
+use OopPoker\RuleA;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../lib/oop_poker/HandEvaluator.php';

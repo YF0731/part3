@@ -1,5 +1,9 @@
 <?php
 
+namespace OopPoker\Tests;
+
+use OopPoker\Deck;
+use OopPoker\Player;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../lib/oop_poker/Player.php';

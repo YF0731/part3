@@ -1,5 +1,9 @@
 <?php
 
+namespace OopPoker\Tests;
+
+use OopPoker\Card;
+use OopPoker\RuleC;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../lib/oop_poker/RuleC.php';

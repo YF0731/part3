@@ -1,5 +1,8 @@
 <?php
 
+namespace OopPoker\Tests;
+
+use OopPoker\Deck;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../lib/oop_poker/Deck.php';
