@@ -1,5 +1,7 @@
 <?php
 
+namespace Poker;
+
 require_once 'PokerCard.php';
 require_once 'PokerRule.php';
 

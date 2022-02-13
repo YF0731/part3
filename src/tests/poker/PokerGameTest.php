@@ -1,5 +1,8 @@
 <?php
 
+namespace Poker\Tests;
+
+use Poker\PokerGame;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../lib/poker/PokerGame.php';

@@ -1,5 +1,7 @@
 <?php
 
+namespace Poker;
+
 require_once  __DIR__ . '/PokerCard.php';
 require_once  __DIR__ . '/PokerHandEvaluator.php';
 require_once  __DIR__ . '/PokerTwoCardRule.php';

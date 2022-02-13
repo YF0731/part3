@@ -1,5 +1,8 @@
 <?php
 
+namespace VendingMachine\Tests;
+
+use VendingMachine\Item;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../../lib/vending_machine/Item.php';

@@ -1,5 +1,9 @@
 <?php
 
+namespace Poker\Tests;
+
+use Poker\PokerCard;
+use Poker\PokerThreeCardRule;
 use PHPUnit\Framework\TestCase;
 
 require_once(__DIR__ . '/../../lib/poker/PokerThreeCardRule.php');
