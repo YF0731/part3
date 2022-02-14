@@ -1,34 +1,53 @@
 <?php
 
-$in1 = [
-    'a' => 1,
-    'b' => 2,
-    'c' => 3,
-    'd' => 4,
+// class Scanner
+// {
+//     private $arr = [];
+//     private $count = 0;
+//     private $pointer = 0;
+//     public function next()
+//     {
+//         if ($this->pointer >= $this->count) {
+//             $str = trim(fgets(STDIN));
+//             $this->arr = explode(' ', $str);
+//             $this->count = count($this->arr);
+//             $this->pointer = 0;
+//         }
+//         $result = $this->arr[$this->pointer];
+//         $this->pointer++;
+//         return $result;
+//     }
+//     public function hasNext()
+//     {
+//         return $this->pointer < $this->count;
+//     }
+//     public function nextInt()
+//     {
+//         return (int)$this->next();
+//     }
+//     public function nextDouble()
+//     {
+//         return (float)$this->next();
+//     }
+// }
+
+// $sc = new Scanner();
+// $first = [500, $sc->nextInt()]; // [500, 500] 3通り
+// $second = [100, $sc->nextInt()]; // [100, 100] 3通り
+// $third = [50, $sc->nextInt()]; // [50, 50] 3通り - 1
+$result = 100;
+$number = 0;
+
+$tmp = [
+    500 => 2,
+    100 => 2,
+    50 => 2,
 ];
 
-$in2 = 99;
+foreach ($tmp as $key => $value) {
+    if ($key === 100) {
+        $number++;
+    }
+}
 
-//////////////////////////////////
-//       SOME CODE HERE         //
-//////////////////////////////////
-
-$in1['id'] = $in2;
-$out2 = array_combine(array_map(fn ($key) => ':' . $key, array_keys($in1)), array_values($in1));
-
-$set = implode(', ', array_map(fn ($key) => "{$key} = :{$key}", array_keys($in1)));
-
-$out1 = "UPDATE tbl SET {$set} WHERE id = :id";
-
-var_dump($out1, $out2);
-
-/*
-string 'UPDATE tbl SET a = :a, b = :b, c = :c, d = :d WHERE id = :id' (length=60)
-
-array (size=5)
-  ':a' => int 1
-  ':b' => int 2
-  ':c' => int 3
-  ':d' => int 4
-  ':id' => int 99
-*/
+echo $number;
